@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.5.0"
+  },
+  "applications": {
+    "Fitter_dev": {
+      "applicationId": "9WkSIEg3RGxlrs8sDqER6997an77C08nqRLxNygh",
+      "masterKey": "FbawiqwoHUQ3CspllVUHnalDbk4b5LrtUmdJkV09"
+    },
+    "_default": {
+      "link": "Fitter"
+    }
+  }
+}
