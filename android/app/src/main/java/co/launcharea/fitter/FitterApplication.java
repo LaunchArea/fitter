@@ -32,7 +32,7 @@ public class FitterApplication extends Application {
     private void configureParse() {
         ParseCrashReporting.enable(this);
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "", "");
+        Parse.initialize(this, "9WkSIEg3RGxlrs8sDqER6997an77C08nqRLxNygh", "u7NyTxyaZ220YP7gz8PzumCbOWVoq2T9jTDI4hvF");
         FitterParseUtil.initializeInstallation();
 
         ParseObject.registerSubclass(Post.class);
