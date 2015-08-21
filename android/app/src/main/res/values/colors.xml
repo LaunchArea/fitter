@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/md_blue_grey_900</color>
+    <color name="primary_text_color">#000000</color>
+    <color name="secondary_text_color">#424242</color>
+    <color name="accent">@color/md_red_A700</color>
+    <color name="primary_pressed">@color/md_blue_grey_800</color>
+    <color name="ripple">@color/md_grey_700</color>
+    <color name="divider">#1F000000</color>
+
+    <color name="notification_text_color">@color/md_blue_grey_900</color>
+    <color name="accent_unread_notification">#E6E8EA</color>
+
+    <color name="primary_sub">@color/md_blue_grey_400</color>
+</resources>

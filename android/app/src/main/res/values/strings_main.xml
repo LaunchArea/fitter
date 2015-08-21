@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_post_list">Posts</string>
+    <string name="tab_friend_list">Friends</string>
+    <string name="tab_notice">Notice</string>
+    <string name="menu_profile">Profile</string>
+</resources>

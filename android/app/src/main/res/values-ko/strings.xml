@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_signin">로그인</string>
+    <string name="action_signup">가입</string>
+    <string name="action_ok">완료</string>
+    <string name="action_unfollow">그만 지켜보기</string>
+    <string name="formated_comment_count">댓글 %d개</string>
+    <string name="label_body_fat">체지방</string>
+    <string name="label_height">키</string>
+    <string name="menu_profile">프로필</string>
+    <string name="profile_title_postfix">님의 프로필</string>
+    <string name="tab_notice">알림</string>
+    <string name="tab_friend_list">친구</string>
+    <string name="title_activity_posting">새 글</string>
+    <string name="action_follow">지켜보기</string>
+    <string name="action_cancel">취소</string>
+    <string name="action_post">쓰기</string>
+    <string name="label_weight">몸무게</string>
+    <string name="post_scope_all">모두</string>
+    <string name="post_scope_following">지켜보는</string>
+    <string name="post_scope_mine">내 글만</string>
+    <string name="tab_post_list">글</string>
+</resources>

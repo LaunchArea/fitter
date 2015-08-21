@@ -1,0 +1,49 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_material_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+    </style>
+
+    <style name="Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Primary">
+        <item name="android:textColor">@color/primary_text_color</item>
+    </style>
+
+    <style name="Text.Notification">
+        <item name="android:textColor">@color/notification_text_color</item>
+    </style>
+
+    <style name="Text.Secondary">
+        <item name="android:textColor">@color/secondary_text_color</item>
+    </style>
+
+    <style name="Text.Sub">
+        <item name="android:textColor">@color/primary_sub</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Sub.Small">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="AppThemeForTab" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_material_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:height">48dp</item>
+        <item name="height">48dp</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_unfollow">Unfollow</string>
+    <string name="action_follow">Follow</string>
+    <string name="section_followings" translatable="false">Followers</string>
+    <string name="section_followers" translatable="false">Followees</string>
+</resources>

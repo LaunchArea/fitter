@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.launcharea.fitter.ui.WorkoutSelectorActivity">
+
+    <item android:id="@+id/workoutSearch"
+        android:icon="@drawable/ic_action_search"
+        android:title="Search"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_savedWorkout"
+        android:title="@string/action_savedWorkout"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_loggedWorkout"
+        android:title="@string/action_loggedWorkout"
+        app:showAsAction="never" />
+
+</menu>

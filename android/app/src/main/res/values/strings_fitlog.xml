@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="row_exercise">Exercise</string>
+    <string name="row_description">Description</string>
+    <string name="row_elapsed_time">Elapsed Time</string>
+
+    <string name="hint_elpased_time">Elapsed Time (sec)</string>
+    <string name="hint_description">Weight * Rep * Set</string>
+    <string name="hint_exercise">Exercise Name</string>
+    <string name="hint_superset">Enter superset name</string>
+
+    <string name="action_start_template">TAB TO ADD WORKOUT</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_add_exercise">ADD EXERCISE</string>
+    <string name="action_add_workout">ADD WORKOUT</string>
+
+    <string name="item_add_to">Add to\u0020</string>
+    <string name="item_modify">Modify \u0020</string>
+    <string name="item_new_superset">new superset</string>
+
+    <string name="label_superset">Superset #</string>
+    <string name="hint_description_template_select">Choose description template</string>
+
+</resources>

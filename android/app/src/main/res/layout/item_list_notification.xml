@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp">
+
+        <com.parse.ParseImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="@dimen/list_item_profile_thumbnail_width"
+            android:layout_height="@dimen/list_item_profile_thumbnail_width"
+            android:layout_alignParentLeft="true"
+            android:background="@color/divider"
+            android:src="@drawable/ic_bg_person" />
+
+        <TextView
+            style="@style/Text.Notification"
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@+id/profile_picture"
+            android:layout_alignTop="@+id/profile_picture" />
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/Text.Sub.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/content"
+            android:layout_below="@+id/content"
+            android:layout_toRightOf="@id/profile_picture" />
+
+    </RelativeLayout>
+</LinearLayout>

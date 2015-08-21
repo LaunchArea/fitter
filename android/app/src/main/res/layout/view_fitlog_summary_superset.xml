@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <View
+        android:id="@+id/top_border"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/ex_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/top_border"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/more_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ex_list"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/ex_list"
+        android:layout_below="@+id/ex_title"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/divider"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="+" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ex_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ex_list" />
+
+    <LinearLayout
+        android:id="@+id/ex_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ex_title"
+        android:layout_marginBottom="8dp"
+        android:layout_toLeftOf="@+id/more_items"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <include
+            android:id="@+id/item1"
+            layout="@layout/view_fitlog_summary_superset_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/item2"
+            layout="@layout/view_fitlog_summary_superset_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/item3"
+            layout="@layout/view_fitlog_summary_superset_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

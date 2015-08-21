@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">Fitter</string>
+    <string name="title_activity_main" translatable="false">@string/app_name</string>
+    <string name="title_activity_posting">New post</string>
+    <string name="title_activity_workout_selector">Workouts</string>
+    <string name="title_activity_post_detail_acivity"></string>
+</resources>

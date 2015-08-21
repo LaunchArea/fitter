@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fitlog_summary_indent"
+        android:layout_marginLeft="@dimen/fitlog_summary_indent"
+        android:layout_marginRight="@dimen/fitlog_summary_indent"
+        android:layout_marginTop="@dimen/fitlog_summary_indent"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/content_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fitlog_summary_indent"
+        android:layout_marginRight="@dimen/fitlog_summary_indent"
+        android:orientation="vertical" />
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_workout_name">Enter Workout Name</string>
+    <string name="desc_use_saved_workout">Using saved workout :</string>
+    <string name="action_savedWorkout">From saved workouts</string>
+    <string name="action_loggedWorkout">From workout logs</string>
+    <string name="hint_search_workout">Search workout</string>
+    <string name="label_owner">Owner</string>
+    <string name="label_workout">Workout</string>
+    <string-array name="workout_selector_tabs">
+        <item>MINE</item>
+        <item>FOLLOWEES</item>
+        <item>FOLLOWERS</item>
+        <item>ALL</item>
+    </string-array>
+
+    <string name="format_date">yyyy/MM/dd</string>
+
+</resources>

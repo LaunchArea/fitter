@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_post">Post</string>
+    <string name="formated_comment_count">%d comments</string>
+
+    <string name="post_scope_all">All Posts</string>
+    <string name="post_scope_following">Following</string>
+    <string name="post_scope_mine">Mine</string>
+
+    <string-array name="post_scope_array">
+        <item>@string/post_scope_all</item>
+        <item>@string/post_scope_following</item>
+        <item>@string/post_scope_mine</item>
+    </string-array>
+</resources>

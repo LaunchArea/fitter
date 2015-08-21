@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@+id/post_detail_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/md_white_1000">
+
+        <include layout="@layout/view_divider" />
+
+        <ImageButton
+            android:id="@+id/comment_send_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/ic_action_send"
+            />
+
+        <EditText
+            android:id="@+id/post_detail_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/comment_send_button"
+            android:background="@null"
+            android:inputType="text|textMultiLine"
+            android:maxLines="3"
+            android:minHeight="48dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/post_detail_linear_layout"
+        android:layout_alignParentTop="true">
+        <FrameLayout
+            android:id="@+id/post_detail_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/post_detail_linear_layout">
+
+        <FrameLayout
+            android:id="@+id/mention_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
