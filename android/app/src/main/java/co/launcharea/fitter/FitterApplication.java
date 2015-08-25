@@ -47,6 +47,7 @@ public class FitterApplication extends Application {
         DisplayImageOptions options = new DisplayImageOptions.Builder()
                 .cacheInMemory(true)
                 .cacheOnDisk(true)
+                .considerExifParams(true)
                 .build();
 
         //Create a config with those options.
