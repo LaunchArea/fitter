@@ -3,7 +3,9 @@ package co.launcharea.fitter.ui;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
@@ -197,9 +199,20 @@ public class ProfileEditActivity extends BaseActionBarActivity implements View.O
 
             Uri uri = data.getData();
 
+            String[] columns = {MediaStore.Images.Media.ORIENTATION};
+            Cursor cursor = getContentResolver().query(uri, columns, null, null, null);
+            if (cursor == null) {
+                return;
+            }
+            cursor.moveToFirst();
+            int degree = cursor.getInt(cursor.getColumnIndex(columns[0]));
+            cursor.close();
             try {
                 Bitmap src = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 Bitmap bitmap = ThumbnailUtils.extractThumbnail(src, 160, 160, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+                Matrix matrix = new Matrix();
+                matrix.postRotate(degree);
+                bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
 
                 mPicture.setImageBitmap(bitmap);
 
@@ -212,12 +225,12 @@ public class ProfileEditActivity extends BaseActionBarActivity implements View.O
 
     private void storePictureInBackground(Bitmap bitmap) {
         showProgress(true);
+
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 95, stream);
         byte[] bytearray = stream.toByteArray();
 
-        showProgress(true);
-        final ParseFile file = new ParseFile("picture.jpg", bytearray);
+        final ParseFile file = new ParseFile(String.format("picture_%d.jpg", System.currentTimeMillis()), bytearray);
         file.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
