@@ -149,6 +149,7 @@ public class PostingActivity extends BaseActionBarActivity implements FitLogGrou
 
         switch (id) {
             case co.launcharea.fitter.R.id.action_post:
+                item.setEnabled(false);
                 post();
                 return true;
             case android.R.id.home:
@@ -210,6 +211,7 @@ public class PostingActivity extends BaseActionBarActivity implements FitLogGrou
                 } else {
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                invalidateOptionsMenu();
             }
         }.execute();
     }
