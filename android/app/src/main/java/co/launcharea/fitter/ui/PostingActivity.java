@@ -1,7 +1,10 @@
 package co.launcharea.fitter.ui;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,6 +31,7 @@ import org.json.JSONException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import co.launcharea.fitter.model.FitLog;
 import co.launcharea.fitter.model.Post;
@@ -145,6 +149,7 @@ public class PostingActivity extends BaseActionBarActivity implements FitLogGrou
 
         switch (id) {
             case co.launcharea.fitter.R.id.action_post:
+                item.setEnabled(false);
                 post();
                 return true;
             case android.R.id.home:
@@ -206,6 +211,7 @@ public class PostingActivity extends BaseActionBarActivity implements FitLogGrou
                 } else {
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                invalidateOptionsMenu();
             }
         }.execute();
     }
@@ -230,12 +236,22 @@ public class PostingActivity extends BaseActionBarActivity implements FitLogGrou
 
             Uri uri = data.getData();
 
+            String[] columns = {MediaStore.Images.Media.ORIENTATION};
+            Cursor cursor = getContentResolver().query(uri, columns, null, null, null);
+            if (cursor == null) {
+                return;
+            }
+            cursor.moveToFirst();
+            int degree = cursor.getInt(cursor.getColumnIndex(columns[0]));
+            cursor.close();
+
             try {
                 Bitmap src = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-//                Bitmap bitmap = ThumbnailUtils.extractThumbnail(src, 160, 160, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-                Bitmap bitmap = src;
-                if (src.getWidth() > 1024) {
-                    bitmap = Bitmap.createScaledBitmap(src, 1024, (int) (src.getHeight() * (1024.f / src.getWidth())), false);
+                Matrix matrix = new Matrix();
+                matrix.postRotate(degree);
+                Bitmap bitmap = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);;
+                if (src.getWidth() > 1080) {
+                    bitmap = Bitmap.createScaledBitmap(bitmap, 1080, (int) (bitmap.getHeight() * (1080.f / bitmap.getWidth())), false);
                 }
 
                 ImageView mPicture = (ImageView) findViewById(co.launcharea.fitter.R.id.photo);
@@ -246,7 +262,7 @@ public class PostingActivity extends BaseActionBarActivity implements FitLogGrou
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 95, stream);
                 byte[] bytearray = stream.toByteArray();
 
-                mPhotoFile = new ParseFile("media.jpg", bytearray);
+                mPhotoFile = new ParseFile(String.format("media_%d.jpg", System.currentTimeMillis()), bytearray);
             } catch (IOException e) {
                 e.printStackTrace();
             }

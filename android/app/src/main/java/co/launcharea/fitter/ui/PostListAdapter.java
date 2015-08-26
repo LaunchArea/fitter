@@ -9,7 +9,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -121,8 +125,15 @@ public class PostListAdapter extends BaseAdapter {
 
         ParseFile photoFile = post.getParseFile("photo");
         if (photoFile != null) {
+            ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse(photoFile.getUrl()))
+                    .setAutoRotateEnabled(true)
+                    .build();
+            DraweeController controller = Fresco.newDraweeControllerBuilder()
+                    .setImageRequest(request)
+                    .setOldController(photo.getController())
+                    .build();
             photo.setAspectRatio(1.778f);
-            photo.setImageURI(Uri.parse(photoFile.getUrl()));
+            photo.setController(controller);
             photo.setVisibility(View.VISIBLE);
         } else {
             photo.setVisibility(View.GONE);

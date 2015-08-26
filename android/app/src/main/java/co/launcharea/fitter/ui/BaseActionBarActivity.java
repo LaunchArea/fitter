@@ -18,6 +18,8 @@ public class BaseActionBarActivity extends ActionBarActivity {
     protected void showProgress(boolean show) {
         if (mProgress == null) {
             mProgress = new ProgressDialog(this);
+            mProgress.setCanceledOnTouchOutside(false);
+            mProgress.setCancelable(false);
         }
 
         if (show) {
