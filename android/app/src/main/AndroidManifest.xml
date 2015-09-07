@@ -41,7 +41,8 @@
         <activity
             android:name="co.launcharea.fitter.ui.PostingActivity"
             android:label="@string/title_activity_posting"
-            android:windowSoftInputMode="adjustResize|stateVisible" />
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:screenOrientation="portrait" />
         <activity android:name="co.launcharea.fitter.ui.ProfileViewActivity">
         </activity>
         <activity
