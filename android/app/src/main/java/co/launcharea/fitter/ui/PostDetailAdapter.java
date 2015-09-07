@@ -24,6 +24,7 @@ import java.util.List;
 import co.launcharea.fitter.R;
 import co.launcharea.fitter.model.Comment;
 import co.launcharea.fitter.model.Post;
+import co.launcharea.fitter.util.FitterUIUtil;
 import co.launcharea.fitter.widget.FitLogGroup;
 
 /**
@@ -136,6 +137,7 @@ public class PostDetailAdapter extends BaseAdapter implements ListAdapter {
                 String content = mPost.getContent();
                 if (content != null && content.length() > 0) {
                     contentTextView.setText(mPost.getRichContent());
+                    FitterUIUtil.linkifyText(contentTextView);
                     contentTextView.setVisibility(View.VISIBLE);
                 } else {
                     contentTextView.setVisibility(View.GONE);

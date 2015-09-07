@@ -54,6 +54,8 @@ public class PostListAdapter extends BaseAdapter {
             convertView = View.inflate(getContext(), R.layout.item_list_post, null);
         }
 
+        ((ViewGroup)convertView).setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
+
         ParseUser user = post.getUser();
         ParseImageView profile = (ParseImageView) convertView.findViewById(R.id.profile_picture);
         TextView name = (TextView) convertView.findViewById(R.id.name);
@@ -89,6 +91,7 @@ public class PostListAdapter extends BaseAdapter {
         if (post.getContent().length() > 0) {
             TextView content = (TextView) convertView.findViewById(R.id.content);
             content.setText(post.getRichContent());
+            FitterUIUtil.linkifyText(content);
             contentLayout.setVisibility(View.VISIBLE);
             showContent = true;
         } else {
