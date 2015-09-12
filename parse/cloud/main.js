@@ -6,7 +6,7 @@ Parse.Cloud.define("comment", function(request, response) {
   var content = request.params.content;
   var userId = request.params.userId;
   if (userId == undefined) {
-    userId = "OxTnR4Nt5W";  // fitter's id
+    userId = "OxTnR4Nt5W";  // id of fitter
   }
 
   var Post = Parse.Object.extend("Post"); //class
@@ -118,7 +118,9 @@ Parse.Cloud.afterSave("Comment", function(request) {
 
       var post = results[0];
       var comment = request.object;
-      post.increment("commentCount", 1);
+      if (!comment.existed()) {
+          post.increment("commentCount", 1);
+      }
       post.set("lastComment", comment);
       post.save(null, {
         success:function() {
@@ -230,7 +232,7 @@ function sendMentionPushIfMentioned(user, type, postId, content, except) {
         }
       },
       error: function(error) {
-        console.error("can't find username: " + mentionedUserId);
+        console.error("cannot find username: " + mentionedUserId);
       }
     });
   }
