@@ -120,16 +120,16 @@ Parse.Cloud.afterSave("Comment", function(request) {
       var comment = request.object;
       if (!comment.existed()) {
           post.increment("commentCount", 1);
-      }
-      post.set("lastComment", comment);
-      post.save(null, {
-        success:function() {
+          post.set("lastComment", comment);
+          post.save(null, {
+              success:function() {
 
-        },
-        error:function() {
-          console.error("fail to save post, " + postId);
-        }
-      });
+              },
+              error:function() {
+                  console.error("fail to save post, " + postId);
+              }
+          });
+      }
 
       var user = post.get("user");
       if (user.id == commentWriter.id) {
